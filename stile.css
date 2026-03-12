@@ -80,7 +80,7 @@
             height: 100vh;
             background:
                 linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                url("image/cover.png") center/cover no-repeat;
+                url("cover.png") center/cover no-repeat;
             display: flex;
             align-items: center;
             padding-left: 80px;
@@ -269,9 +269,9 @@ nav a { margin-left: 20px; text-decoration: none; color: black; }
 }
 
 /* --- Remplacez ces URLs par vos chemins d'images réels --- */
-.item-1 { background-image: url('image/plomb.png'); }
-.item-2 { background-image: url('image/bois.png'); }
-.item-3 { background-image: url('image/domaine.png'); }
+.item-1 { background-image: url('plomb.png'); }
+.item-2 { background-image: url('bois.png'); }
+.item-3 { background-image: url('domaine.png'); }
 
 /* Superposition sombre pour améliorer le contraste du texte (comme dans l'image) */
 
@@ -467,7 +467,7 @@ margin-bottom: 1em;
 
 .hero-bandeau {
     /* Remplacez 'URL_DE_VOTRE_IMAGE.jpg' par le chemin de votre image */
-    background-image: url('image/avenir.png') ;
+    background-image: url('avenir.png') ;
     background-size: cover;
     background-position: center;
     background-color: black; /* Couleur de secours si l'image ne charge pas */
@@ -934,7 +934,7 @@ blockquote {
     left: 0;
     width: 100%;
     height: 40em; /* Hauteur de l'image visible */
-    background-image: url('image/cover.png'); 
+    background-image: url('cover.png'); 
     background-size: cover;
     background-position: center;
 }
@@ -1436,7 +1436,7 @@ color: var(--rouge-foncé);
    width: 20em;
    margin-left: 7em;
     /* Remplacez le dégradé par votre URL d'image */
-    background-image: url('image/affice.png'); 
+    background-image: url('affice.png'); 
     background-size: cover;
     background-position: center;
 
