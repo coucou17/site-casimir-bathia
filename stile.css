@@ -1686,7 +1686,7 @@ margin-top: 4em;
 
     .textes h1 { margin: 0; font-size: 1.8em; text-transform: uppercase; }
 
-    .article-secondaire .meta {
+    .article-secondaire .meta, h2 {
     font-size: 0.8em;
     color: var(--couleur-meta);
     margin-top: 5px;
@@ -1837,6 +1837,7 @@ margin-top: 4em;
            /* filter: invert(100%); */
         }
             header {
+                height: 5em;
                 flex-direction: column;
                 align-items: flex-start;
             }
@@ -1846,6 +1847,7 @@ margin-top: 4em;
             }
 
             .hero {
+                    height: 25em;
                 padding-left: 30px;
             }
 
@@ -1898,10 +1900,19 @@ margin-top: 4em;
     .logo {
         display: block;
     }
+           .logo img {
+            height: 5em;
+            width: auto;
+        }
 
     .burger {
         display: flex !important; /* Force l'affichage du burger */
         z-index: 101; /* Doit être au-dessus de tout */
+    }
+
+          .burger span {
+     width:3em;
+     height: 0.3em;
     }
 
     nav.active { left: 0; } /* On l'affiche quand la classe active est là */
