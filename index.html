@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Bureau ALBKS en ligne</title>
-    <link rel="stylesheet" href="stile.css">
-    <script src="script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Bureau ALBKS en ligne</title>
+<link rel="stylesheet" href="stile.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
    
 </head>
 <body>
 
-<header>
+<header id="header">
+
+       <!-- TEXTE AU DÉBUT -->
+    <div class="brand-text">
+        <span class="a">A</span>2BKS
+    </div>
+
     <div class="logo">
-        <img src="logo-albks.png" alt="Logo ALBKS">
+        <img src="image/logo-albks.png" alt="Logo ALBKS" class="hero-logo">
     </div>
 
     <!-- Bouton Burger (visible uniquement sur mobile) -->
@@ -36,21 +41,16 @@
 
 
 <section class="hero">
-    <div class="hero-content">
-        <div class="decor-line"></div>
+    <div class="overlay"></div>
 
-        <h1>Rejoignez-nous !</h1>
+    <div class="hero-content">
+        <h1 class="hero-title">A2BKS</h1>
+        <h2>Engagez-vous pour le développement !</h2>
 
         <p>
-            Pour Boko-Songho, nous construisons une vision locale,
-            solidaire et tournée vers l’avenir, avec les habitants
-            et pour les habitants.
+            Projets éducatifs, initiatives solidaires et actions concrètes 
+            pour la communauté.
         </p>
-
-        <a href="vision.html">
-            <span></span>
-            Découvrir notre vision
-        </a>
     </div>
 </section>
 
@@ -103,8 +103,8 @@
                     <div class="color-line line-green"></div>
                     <p class="card-title">Face au défi<br>environnemental</p>
                 </div>
-               
-                <img src="ago.png" alt="Icône plante" class="card-icon">
+                <!-- Remplacez par le chemin de votre icône (ex: plant.png) -->
+                <img src="image/ago.png" alt="Icône plante" class="card-icon">
                 <p class="card-description">Agir pour promouvoir l'agroforesterie et gérer durablement les ressources forestières du district de Boko-Songho.</p>
             </div>
 
@@ -115,7 +115,7 @@
                     <p class="card-title">Face aux inégalités<br>sociales</p>
                 </div>
                 <!-- Remplacez par le chemin de votre icône (ex: puzzle.png) -->
-                <img src="eau.png" alt="Icône puzzle" class="card-icon">
+                <img src="image/eau.png" alt="Icône puzzle" class="card-icon">
                 <p class="card-description">Agir pour faciliter l'accès à l'eau potable et soutenir les initiatives de développement communautaire local.</p>
             </div>
             
@@ -137,7 +137,7 @@
                     <p class="card-title">Face aux défis<br>d'égalité</p>
                 </div>
                  <!-- Remplacez par le chemin de votre icône (ex: female.png) -->
-                <img src="uni.png" alt="Icône femme" class="card-icon">
+                <img src="image/uni.png" alt="Icône femme" class="card-icon">
                 <p class="card-description">Agir pour soutenir l'éducation des jeunes filles et l'autonomisation économique des femmes du district.</p>
             </div>
 
@@ -148,7 +148,7 @@
                     <p class="card-title">Face aux partenariats <br>externes</p>
                 </div>
                  <!-- Remplacez par le chemin de votre icône (ex: flag.png) -->
-                <img src="globe.png" alt="Icône drapeau" class="card-icon">
+                <img src="image/globe.png" alt="Icône drapeau" class="card-icon">
                 <p class="card-description">Agir pour mobiliser des fonds et nouer des partenariats internationaux (européens, nationaux, privés) pour le développement de la région.</p>
             </div>
 
@@ -208,7 +208,7 @@
     <footer>
             <div class="footer-logo">
                 <!-- VOTRE LOGO EST ICI : Remplacez 'votre_logo_blanc.png' par le chemin de votre fichier image -->
-                     <img src="logo-albks.png" alt="Logo ALBKS">
+                     <img src="image/logo-albks.png" alt="Logo ALBKS">
             </div>
         <nav>
             <ul>
@@ -219,5 +219,6 @@
         </nav>
     </footer>
 </body>
+    <script src="script/script.js"></script>
 </html>
 
