@@ -1,7 +1,113 @@
+/* HEADER */
+#header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
 
+/* TEXTE A2BKS */
+.brand-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.brand-text-other {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+} 
+
+.brand-text-other .a {
+    color: #4CAF50; /* vert stylé */
+}
+
+
+.brand-text .a {
+    color: #4CAF50; /* vert stylé */
+}
+
+/* LOGO caché au début */
+.logo {
+    display: none;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* MENU PAR DÉFAUT */
+#header nav a {
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ #header nav .ul a {
+    color: black;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#header nav a:hover {
+    color: #4CAF50;
+}
+
+/* ===== ÉTAT SCROLL ===== */
+#header.scrolled {
+    background: white;
+}
+
+/* Texte devient noir */
+#header.scrolled nav a {
+    color: black;
+}
+
+/* ON CACHE LE TEXTE */
+#header.scrolled .brand-text,#header.scrolled  .brand-text-other {
+    display: none;
+}
+
+
+
+
+/* ON AFFICHE LE LOGO */
+#header.scrolled .logo {
+    display: block;
+}
+
+/* HEADER CACHÉ */
+#header.hidden {
+    transform: translateY(-100%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+        
+        
         /* ===== COULEURS (VERT DU LOGO) ===== */
         :root {
-            --vert-principal: #2e8b57;   /* vert logo */
+            --vert-principal: #4CAF50;   /* vert logo */
+            --vert: #2E7D32;
             --blanc: #ffffff;
             --noir: #000000;
             --rouge:#f00c00;
@@ -20,7 +126,8 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            font-family: Arial, sans-serif;
             background-color: var(--blanc);
             color: var(--blanc);
         }
@@ -31,7 +138,6 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--blanc);
             color: var(--noir);
             display: flex;
             align-items: center;
@@ -57,8 +163,9 @@
 
 #nav-menu ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--blanc);
     padding: 5px 5px;
+    font-weight: bolder;
     transition: color 0.3s;
 }
      
@@ -78,54 +185,45 @@
         /* ===== HERO ===== */
         .hero {
             height: 100vh;
-            background:
-                linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                url("cover.png") center/cover no-repeat;
+            background: url("image/cover.png") center/cover no-repeat;
             display: flex;
             align-items: center;
             padding-left: 80px;
         }
 
-        .hero-content {
-            max-width: 700px;
-        }
+/* OVERLAY (important) */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.304);
+}
 
-        .decor-line {
-            width: 60px;
-            height: 6px;
-            background-color: var(--vert-principal);
-            margin-bottom: 20px;
-        }
+/* CONTENU */
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 600px;
+}
 
-        .hero h1 {
-            color: #fff;
-            font-size: 52px;
-            margin-bottom: 20px;
-        }
+/* TITRES */
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    color: white;
+}
 
-        .hero p {
-            color: #fff;
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+.hero-content h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin: 10px 0;
+}
 
-        .hero a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--blanc);
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 18px;
-        }
+.hero-content p {
+    font-size: 1.1rem;
+    color: #ddd;
+}
 
-        .hero a span {
-            display: inline-block;
-            width: 30px;
-            height: 4px;
-            background-color: var(--vert-principal);
-        }
+
 
 
 
@@ -234,7 +332,7 @@ header {
 nav a { margin-left: 20px; text-decoration: none; color: black; }
 
 .burger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.burger span { width: 30px; height: 3px; background: black; transition: 0.3s; }
+.burger span { width: 30px; height: 3px; background: var(--vert); transition: 0.3s; }
 
 /* Animation des barres du burger */
 .burger.open span:nth-child(1) {
@@ -269,9 +367,9 @@ nav a { margin-left: 20px; text-decoration: none; color: black; }
 }
 
 /* --- Remplacez ces URLs par vos chemins d'images réels --- */
-.item-1 { background-image: url('plomb.png'); }
-.item-2 { background-image: url('bois.png'); }
-.item-3 { background-image: url('domaine.png'); }
+.item-1 { background-image: url('image/plomb.png'); }
+.item-2 { background-image: url('image/bois.png'); }
+.item-3 { background-image: url('image/domaine.png'); }
 
 /* Superposition sombre pour améliorer le contraste du texte (comme dans l'image) */
 
@@ -467,7 +565,7 @@ margin-bottom: 1em;
 
 .hero-bandeau {
     /* Remplacez 'URL_DE_VOTRE_IMAGE.jpg' par le chemin de votre image */
-    background-image: url('avenir.png') ;
+    background-image: url('image/avenir.png') ;
     background-size: cover;
     background-position: center;
     background-color: black; /* Couleur de secours si l'image ne charge pas */
@@ -551,7 +649,7 @@ margin-bottom: 1em;
     text-align: center; /* Centre le titre et le texte par défaut */
 }
 
-h2 {
+.content h2 {
     color: var(--vert-principal); /* Couleur du titre */
     margin-bottom: 20px;
     border-bottom: 1px solid var(--rouge); /* Soulignement comme dans l'image */
@@ -934,7 +1032,7 @@ blockquote {
     left: 0;
     width: 100%;
     height: 40em; /* Hauteur de l'image visible */
-    background-image: url('cover.png'); 
+    background-image: url('image/cover.png'); 
     background-size: cover;
     background-position: center;
 }
@@ -951,6 +1049,10 @@ blockquote {
     margin-top: 5em;
     align-items: center;
     padding-left: 5%; /* Marge pour le texte */
+}
+
+.action-page-intro .intro-banner-yellow {
+    margin-top: 4em;
 }
 
 .banner-content {
@@ -1355,13 +1457,19 @@ footer nav ul li a:hover {
     color: white;
     padding: 15px;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 18%;
+    align-items: center;
       box-shadow:
 1px 5px 1px #666,
  1px 1px 3px #666,
 1px  5px 1px #666,
  3px  1px 1px #666;
     border-radius: 50px 50px 50px 50px;
+}
+
+.merci h2{
+    font-size: 2em;
+    text-align: center;
 }
 
 .header-date {
@@ -1436,10 +1544,9 @@ color: var(--rouge-foncé);
    width: 20em;
    margin-left: 7em;
     /* Remplacez le dégradé par votre URL d'image */
-    background-image: url('affice.png'); 
+    background-image: url('image/affice.png'); 
     background-size: cover;
     background-position: center;
-
 }
 
 
@@ -1555,13 +1662,11 @@ details[open] {
 
 }
 #statut-legal h2{
-    font-size: 3em;
-               color: var(--vert-principal); /* Le jaune vif */
-                 text-shadow:
-  5px 5px 0 #821813,
-   2px 2px 0 #821813;
-
-        
+font-size: 2.5em;
+margin-bottom: 1em;
+color: var(--vert-principal); /* Le jaune vif */
+text-shadow: 5px 5px 0 #821813,
+             2px 2px 0 #821813;      
 }
 
 #statut-legal p {
@@ -1638,24 +1743,55 @@ margin-top: 4em;
     .flyer-grid {
         grid-template-columns: 1fr;
     }
-        .flyer-image-placeholder {
+
+.flyer-image-placeholder {
    height: 25em;
    width: 20em;
    margin-left: 4em;
     background-size: cover;
     background-position: center;
 }
+
+.merci {
+    background-color: #225f579a;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 37%;
+    align-items: center;
+      box-shadow:
+1px 5px 1px #666,
+ 1px 1px 3px #666,
+1px  5px 1px #666,
+ 3px  1px 1px #666;
+    border-radius: 50px 50px 50px 50px;
+}
+
+.merci h2{
+    font-size: 1.8em;
+    text-align: center;
+}
 }
 
 /* --- VERSION MOBILE --- */
 @media (max-width: 768px) {
+
+        .hero-logo,
+        .hero-title {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
     
     #statut-legal {
+        align-items: center;
+        margin: 0em 0;
         padding: 10px;
         text-align: center; /* Centre le texte pour un meilleur look mobile */
     }
 
     #statut-legal h2 {
+        margin: 3em 1em 1em 2em;
         font-size: 1.8em; /* Réduit le titre géant sur mobile */
         text-shadow: 2px 2px 0 #821813; /* Ombre plus discrète */
     }
@@ -1720,7 +1856,7 @@ margin-top: 4em;
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin-top: -1em;
+    margin-top: 6em;
   }
   .bio-section h2{
      border-bottom: 1px solid #fff;
@@ -1854,13 +1990,14 @@ margin-top: 4em;
             }
 
             .hero {
-                    height: 25em;
+           
                 padding-left: 30px;
             }
 
             .hero h1 {
                 font-size: 36px;
             }
+
 
                 #nav-menu ul {
         flex-direction: column; /* Empile les li verticalement sur mobile */
@@ -1904,10 +2041,13 @@ margin-top: 4em;
         position: relative;
     }
 
+
+
     .logo {
         display: block;
     }
-           .logo img {
+
+        .logo img {
             height: 5em;
             width: auto;
         }
@@ -1916,15 +2056,17 @@ margin-top: 4em;
         display: flex !important; /* Force l'affichage du burger */
         z-index: 101; /* Doit être au-dessus de tout */
     }
-
-          .burger span {
+    .burger span {
      width:3em;
      height: 0.3em;
     }
 
-    nav.active { left: 0; } /* On l'affiche quand la classe active est là */
+    nav.active { left: 0; background-color: rgba(39, 60, 75, 0.979);} /* On l'affiche quand la classe active est là */
 
-    nav a { padding: 15px; display: block; border-bottom: 1px solid #eee; }
+    nav a{ padding: 15px; display: block; border-bottom: 1px solid #eee;}
+#header nav .ul a { padding: 15px; display: block; border-bottom: 1px solid #eee; color: white;}
+#header nav .ul .current a { color: #4CAF50;}
 }
 
+    
     
